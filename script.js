@@ -6,7 +6,8 @@ class Person {
     }
 
     set name(value) {
-        this._name = value;
+        if (this._name.length > 0) this._name = value;
+        else console.log('Enter a Valid Name');
     }
 
     get name() {
@@ -14,14 +15,19 @@ class Person {
     }
 
     set age(value) {
-        this._age = value;
+        if (this._age > 0){
+            this._age = value;
+        }
+        console.log("Enter a positive value");
+        
     }
     get age() {
         return this._age;
     }
 
     set country(value) {
-        this._country = value;
+        if (this.country.length > 0) this._country = value;
+        else console.log('Enter a Valid Country Name');
     }
     get country() {
         return this._country;
